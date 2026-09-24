@@ -11,3 +11,9 @@ class BasePage():
     def click_element(self, locator):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(locator))
         return self.driver.find_element(*locator).click() 
+
+    def wait_for_url(self, url):
+        WebDriverWait(self.driver, 10).until(EC.url_to_be(url))
+    
+    def get_current_url(self):
+        return self.driver.current_url

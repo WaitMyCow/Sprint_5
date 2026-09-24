@@ -13,14 +13,29 @@ class HomePage(BasePage):
     def click_on_enter_button(self):
         self.click_element(HomePageLocators.ENTER_BUTTON)
 
-    #Булки
+    #Нажать кнопку "Булки"
     def click_on_buns_button(self):
         self.click_element(HomePageLocators.BUNS_BUTTON)
 
-    #Соусы
+    #Булки выбраны?
+    def is_buns_button_selected(self):
+        element = self.find_element(HomePageLocators.BUNS_BUTTON)
+        return "tab_tab_type_current" in element.get_attribute("class")
+
+    #Нажать кнопку "Соусы"
     def click_on_sauces_button(self):
         self.click_element(HomePageLocators.SAUCES_BUTTON)
-        
-    #Начинки 
+
+    #Соусы выбраны?
+    def is_sauces_button_selected(self):
+        element = self.find_element(HomePageLocators.SAUCES_BUTTON)
+        return "tab_tab_type_current" in element.get_attribute("class")
+    
+    #Нажать кнопку "Начинки"
     def click_on_filling_button(self):
         self.click_element(HomePageLocators.FILLING_BUTTON)
+
+    #Начинки выбраны?
+    def is_filling_button_selected(self):
+        element = self.find_element(HomePageLocators.FILLING_BUTTON)
+        return "tab_tab_type_current" in element.get_attribute("class")
